@@ -2,8 +2,6 @@
 ---
 Governance Indicators   
 title: "Trust in Government Index"
-author: " Fiorella Valdiviezo"
-date: "04 October 2021"
 ---
 ## Load Require Packages
 options("install.lock"=FALSE)
