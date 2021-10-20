@@ -1,0 +1,246 @@
+**********************************************************
+* Municipal Data and Hisotrical Variables
+**********************************************************
+
+library("readxl")
+library("read.xlsx")
+library("foreign")
+  #Clean Apurimac Data ( Income, Revenue, Expenditure, and Mining Rents)
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Apurimac/Canon")
+ canon2008 <- read_excel("2008.xls")
+ canon2009 <- read_excel("2009.xls")
+ canon2010 <- read_excel("2010.xls")
+ canon2011 <- read_excel("2011.xls")
+ canon2012 <- read_excel("2012.xls")
+ canon2013 <- read_excel("2013.xls")
+ canon2014 <- read_excel("2014.xls")
+ # Merge minin rents databases
+ mining.rents <- rbind(canon2008,canon2009, canon2010,canon2011,canon2012, canon2013,
+                       canon2014)
+ # Open Municipality Income datasets
+ setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Apurimac/Income")
+ Income2008 <- read_xlsx("Income2008.xlsx")
+ Income2009 <- read_xlsx("Income2009.xlsx")
+ Income2010 <- read_xlsx("Income2010.xlsx")
+ Income2011 <- read_xlsx("Income2011.xlsx")
+ Income2012 <- read_xlsx("Income2012.xlsx")
+ Income2013 <- read_xlsx("Income2013.xlsx")
+ Income2014 <- read_xlsx("Income2014.xlsx")
+ # Merge income datasets
+ Apurimac.Income <- rbind(Income2008,Income2009, Income2010,Income2011,Income2012, Income2013,
+                       Income2014)
+ 
+ setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Apurimac")
+ 
+require(foreign)
+write.dta(Apurimac.Income, "IncomeApurimac.dta")
+require(foreign)
+write.dta(mining.rents, "MiningRents.dta")
+###########################################################
+#Clean Arequipa Data ( Income, Revenue, Expenditure, and Mining Rents)
+rm(list=ls())
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Arequipa/Canon")
+canon2008 <- read_excel("2008.xls")
+canon2009 <- read_excel("2009.xls")
+canon2010 <- read_excel("2010.xls")
+canon2011 <- read_excel("2011.xls")
+canon2012 <- read_excel("2012.xls")
+canon2013 <- read_excel("2013.xls")
+canon2014 <- read_excel("2014.xls")
+# Merge minin rents databases
+mining.rents <- rbind(canon2008,canon2009, canon2010,canon2011,canon2012, canon2013,
+                      canon2014)
+ 
+# Open Municipality Income datasets
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Arequipa/Income")
+Income2008 <- read_xlsx("RevExp2008.xlsx")
+Income2009 <- read_xlsx("RevExp2009.xlsx")
+Income2010 <- read_xlsx("RevExp2010.xlsx")
+Income2011 <- read_xlsx("RevExp2011.xlsx")
+Income2012 <- read_xlsx("RevExp2012.xlsx")
+Income2013 <- read_xlsx("RevExp2013.xlsx")
+Income2014 <- read_xlsx("RevExp2014.xlsx")
+# Merge income datasets
+Arequipa.Income <- rbind(Income2008,Income2009, Income2010,Income2011,Income2012, Income2013,
+                         Income2014)
+
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Arequipa")
+
+require(foreign)
+write.dta(Arequipa.Income, "IncomeArequipa.dta")
+require(foreign)
+write.dta(mining.rents, "MiningRents.dta") 
+###########################################################
+#Clean Ayacucho Data ( Income, Revenue, Expenditure, and Mining Rents)
+rm(list=ls())
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Ayacucho/Canon")
+canon2008 <- read_excel("2008.xls")
+canon2009 <- read_excel("2009.xls")
+canon2010 <- read_excel("2010.xls")
+canon2011 <- read_excel("2011.xls")
+canon2012 <- read_excel("2012.xls")
+canon2013 <- read_excel("2013.xls")
+canon2014 <- read_excel("2014.xls")
+# Merge minin rents databases
+mining.rents <- rbind(canon2008,canon2009, canon2010,canon2011,canon2012, canon2013,
+                      canon2014)
+
+# Open Municipality Income datasets
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Ayacucho/Income")
+Income2008 <- read_xlsx("RevExp2008.xlsx")
+Income2009 <- read_xlsx("RevExp2009.xlsx")
+Income2010 <- read_xlsx("RevExp2010.xlsx")
+Income2011 <- read_xlsx("RevExp2011.xlsx")
+Income2012 <- read_xlsx("RevExp2012.xlsx")
+Income2013 <- read_xlsx("RevExp2013.xlsx")
+Income2014 <- read_xlsx("RevExp2014.xlsx")
+# Merge income datasets
+Ayacucho.Income <- rbind(Income2008,Income2009, Income2010,Income2011,Income2012, Income2013,
+                         Income2014)
+
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Ayacucho")
+
+require(foreign)
+write.dta(Ayacucho.Income, "IncomeAyacucho.dta")
+require(foreign)
+write.dta(mining.rents, "MiningRents.dta") 
+###########################################################
+#Clean Cusco Data ( Income, Revenue, Expenditure, and Mining Rents)
+rm(list=ls())
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Cusco/Canon")
+canon2008 <- read_excel("2008.xls")
+canon2009 <- read_excel("2009.xls")
+canon2010 <- read_excel("2010.xls")
+canon2011 <- read_excel("2011.xls")
+canon2012 <- read_excel("2012.xls")
+canon2013 <- read_excel("2013.xls")
+canon2014 <- read_excel("2014.xls")
+# Merge minin rents databases
+mining.rents <- rbind(canon2008,canon2009, canon2010,canon2011,canon2012, canon2013,
+                      canon2014)
+
+# Open Municipality Income datasets
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Cusco/Income")
+Income2008 <- read_xlsx("RevExp2008.xlsx")
+Income2009 <- read_xlsx("RevExp2009.xlsx")
+Income2010 <- read_xlsx("RevExp2010.xlsx")
+Income2011 <- read_xlsx("RevExp2011.xlsx")
+Income2012 <- read_xlsx("RevExp2012.xlsx")
+Income2013 <- read_xlsx("RevExp2013.xlsx")
+Income2014 <- read_xlsx("RevExp2014.xlsx")
+# Merge income datasets
+Cusco.Income <- rbind(Income2008,Income2009, Income2010,Income2011,Income2012, Income2013,
+                         Income2014)
+
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Cusco")
+
+require(foreign)
+write.dta(Cusco.Income, "IncomeCusco.dta")
+require(foreign)
+write.dta(mining.rents, "MiningRents.dta") 
+###########################################################
+#Clean Puno Data ( Income, Revenue, Expenditure, and Mining Rents)
+rm(list=ls())
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Puno/Canon")
+canon2008 <- read_excel("2008.xls")
+canon2009 <- read_excel("2009.xls")
+canon2010 <- read_excel("2010.xls")
+canon2011 <- read_excel("2011.xls")
+canon2012 <- read_excel("2012.xls")
+canon2013 <- read_excel("2013.xls")
+canon2014 <- read_excel("2014.xls")
+# Merge minin rents databases
+mining.rents <- rbind(canon2008,canon2009, canon2010,canon2011,canon2012, canon2013,
+                      canon2014)
+
+# Open Municipality Income datasets
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Puno/Income")
+Income2008 <- read_xlsx("RevExp2008.xlsx")
+Income2009 <- read_xlsx("RevExp2009.xlsx")
+Income2010 <- read_xlsx("RevExp2010.xlsx")
+Income2011 <- read_xlsx("RevExp2011.xlsx")
+Income2012 <- read_xlsx("RevExp2012.xlsx")
+Income2013 <- read_xlsx("RevExp2013.xlsx")
+Income2014 <- read_xlsx("RevExp2014.xlsx")
+# Merge income datasets
+Puno.Income <- rbind(Income2008,Income2009, Income2010,Income2011,Income2012, Income2013,
+                      Income2014)
+
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Puno")
+
+require(foreign)
+write.dta(Puno.Income, "IncomePuno.dta")
+require(foreign)
+write.dta(mining.rents, "MiningRents.dta") 
+ 
+# Historical Datasets Apurimac
+rm(list=ls())
+ 
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Apurimac")
+
+HV.Apurimac<- read_xlsx("HistoricalVariables1.xlsx")
+
+require(foreign)
+write.dta(HV.Apurimac, "HVApurimac.dta") 
+
+# Historical Datasets Arequipa
+
+rm(list=ls())
+
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Arequipa")
+
+HV.Arequipa<- read_xlsx("HistoricalVariables2.xlsx")
+
+
+require(foreign)
+write.dta(HV.Arequipa, "HVArequipa.dta") 
+
+
+# Historical Datasets Ayacucho
+
+rm(list=ls())
+
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Ayacucho")
+
+HV.Ayacucho<- read_xlsx("HistoricalVariables3.xlsx")
+
+require(foreign)
+write.dta(HV.Ayacucho, "HVAyacucho.dta") 
+
+# Historical Datasets Cusco 
+
+rm(list=ls())
+
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Cusco")
+
+HV.Cusco<- read_xlsx("HistoricalVariables4.xlsx")
+
+require(foreign)
+write.dta(HV.Cusco, "HVCusco.dta") 
+
+# Historical Datasets Puno
+
+rm(list=ls())
+
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI/munis/Puno")
+
+HV.Puno<- read_xlsx("HistoricalVariables5.xlsx")
+
+require(foreign)
+write.dta(HV.Puno, "HVPuno.dta") 
+
+*** Mell data
+
+setwd("C:/Users/Z50-CORE-I5/Desktop/RSE.project/Cleandata_INEI")
+
+
+HV <- read_xlsx("HV.Mell.xlsx")
+
+
+require(foreign)
+write.dta(HV, "HVMell.dta") 
+
+
+
+
+
