@@ -1,0 +1,252 @@
+**********************************************************
+* Apurimac : Municipal Data and Hisotrical Variables
+**********************************************************
+*1. Clean Apurimac Data ( Income, Revenue, Expenditure, and Mining Rents)
+clear all
+set more off
+
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Apurimac"
+cd "$dir"
+
+use "$dir\IncomeApurimac.dta"
+
+drop municipality 
+
+save "$dir\IncomeApurimac.dta", replace
+*************************************************
+************* Canon Apurimac**********
+*************************************************
+use "$dir\MiningRents.dta", clear
+drop municipality
+merge 1:1 ubigeo year  using "IncomeApurimac.dta"
+drop _m 
+
+rename amount canon 
+label var PIM "Total Revenue (in Nuevos Soles)"
+label var canon "canon minero (in Nuevos Soles)"
+label var ejecute "Total expenditure (in Nuevos Soles)"
+
+save "$dir\MunisApurimac.dta", replace
+**********************************************************
+* Arequipa : Municipal Data and Hisotrical Variables
+**********************************************************
+
+*1. Clean Apurimac Data ( Income, Revenue, Expenditure, and Mining Rents)
+clear all
+set more off
+
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Arequipa"
+cd "$dir"
+
+use "$dir\IncomeArequipa.dta"
+
+drop municipality 
+
+save "$dir\IncomeArequipa.dta", replace
+*************************************************
+************* Canon Apurimac**********
+*************************************************
+use "$dir\MiningRents.dta", clear
+merge 1:1 ubigeo year  using "IncomeArequipa.dta"
+drop _m 
+
+rename amount canon 
+label var PIM "Total Revenue (in Nuevos Soles)"
+label var canon "canon minero (in Nuevos Soles)"
+label var ejecute "Total expenditure (in Nuevos Soles)"
+save "$dir\MunisArequipa.dta", replace
+
+**********************************************************
+* Ayacucho : Municipal Data and Hisotrical Variables
+**********************************************************
+
+*1. Clean Ayacucho Data ( Income, Revenue, Expenditure, and Mining Rents)
+clear all
+set more off
+
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Ayacucho"
+cd "$dir"
+
+use "$dir\IncomeAyacucho.dta"
+
+drop municipality 
+
+save "$dir\IncomeAyacucho.dta", replace
+*************************************************
+************* Canon Ayacucho**********
+*************************************************
+use "$dir\MiningRents.dta", clear
+merge m:1 ubigeo year using "IncomeAyacucho.dta"
+drop _m 
+
+rename amount canon 
+label var PIM "Total Revenue (in Nuevos Soles)"
+label var canon "canon minero (in Nuevos Soles)"
+label var ejecute "Total expenditure (in Nuevos Soles)"
+save "$dir\MunisAyacucho.dta", replace
+
+**********************************************************
+* Cusco : Municipal Data and Hisotrical Variables
+**********************************************************
+
+***************Canon Ayacucho**********
+
+1. Clean Cusc0 Data ( Income, Revenue, Expenditure, and Mining Rents)
+clear all
+set more off
+
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Cusco"
+cd "$dir"
+
+use "$dir\MiningRents.dta"
+drop municipality
+
+save "$dir\MiningRents.dta", replace
+*************************************************
+************* Income data **********
+*************************************************
+
+use "$dir\IncomeCusco.dta", clear 
+merge m:1 ubigeo year using "MiningRents.dta"
+drop _m 
+
+rename amount canon 
+label var PIM "Total Revenue (in Nuevos Soles)"
+label var canon "canon minero (in Nuevos Soles)"
+label var ejecute "Total expenditure (in Nuevos Soles)"
+
+save "$dir\MuniCusco.dta", replace
+**********************************************************
+* Puno : Municipal Data and Hisotrical Variables
+**********************************************************
+
+
+***************Canon Puno**********
+1. Clean Cusc0 Data ( Income, Revenue, Expenditure, and Mining Rents)
+clear all
+set more off
+
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Puno"
+cd "$dir"
+
+use "$dir\MiningRents.dta"
+drop municipality
+
+save "$dir\MiningRents.dta", replace
+
+
+*************************************************
+************* Income Data Puno Municipality *****
+*************************************************
+
+*1. Clean Ayacucho Data ( Income, Revenue, Expenditure, and Mining Rents)
+
+use "$dir\IncomePuno.dta", clear
+
+merge m:1 ubigeo year using "MiningRents.dta"
+drop _m 
+
+rename amount canon 
+label var PIM "Total Revenue (in Nuevos Soles)"
+label var canon "canon minero (in Nuevos Soles)"
+label var ejecute "Total expenditure (in Nuevos Soles)"
+
+save "global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Apurimac"
+cd "$dir"
+
+*MERGE MUNICIPALITY VARIABLES WITH HISTORICAL VARIABLES
+**********************************************************************
+* APURIMAC
+
+clear all
+
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Apurimac"
+cd "$dir"
+
+use "$dir\MuniApurimac.dta"
+
+merge m:1 ubigeo year using "HVApurimac.dta"
+
+drop if lat == .
+
+drop _merge 
+
+save "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Apurimac\MuniApurimac.dta"
+
+* Arequipa
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Arequipa"
+cd "$dir"
+
+use "$dir\MunisArequipa.dta"
+
+
+merge m:1 ubigeo using "HVArequipa.dta"
+
+drop if lat == .
+
+save "$dir\MunisArequipa.dta", replace
+
+* Ayacucho
+clear all
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Ayacucho"
+cd "$dir"
+
+use "$dir\MunisAyacucho.dta"
+
+merge m:1 ubigeo using "HVAyacucho.dta"
+
+drop if lat == .
+
+drop _merge
+
+save "dir\MunisAyacucho.dta", replace 
+save "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Ayacucho\MunisAyacucho.dta
+
+* Cusco
+clear all
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Cusco"
+cd "$dir"
+
+use "$dir\MuniCusco.dta"
+
+merge m:1 ubigeo using "HVCusco.dta"
+
+drop if lat == .
+
+drop _merge
+
+ save "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Cusco\MuniCusco.dta", replace
+ 
+ 
+ *Puno 
+clear all
+global dir "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Puno"
+cd "$dir"
+
+use "$dir\MuniPuno.dta"
+
+merge m:1 ubigeo using "HVPuno.dta"
+
+drop if lat == .
+
+drop _merge
+ 
+save "C:\Users\Z50-CORE-I5\Desktop\RSE.project\Cleandata_INEI\munis\Puno\MuniPuno.dta", replace
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
