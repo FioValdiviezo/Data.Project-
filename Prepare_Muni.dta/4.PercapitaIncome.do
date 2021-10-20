@@ -7,6 +7,8 @@ global results "${root}\2.Final_data"
 
 merge m:1 ubigeo using "${root}\POPULATION.dta"
 
+* Construc transfer variables based on Aragon and Rud (2013)
+
 **********************************
 *Generate Transfers per capita
 **********************************
@@ -41,6 +43,8 @@ label var ln_population "ln(district population)"
 save "${root}\1.MunicipalLevel_data", replace 
 
 
+*References:
+* Aragón, Fernando M., and Juan Pablo Rud. 2013. "Natural Resources and Local Communities: Evidence from a Peruvian Gold Mine." American Economic Journal: Economic Policy, 5 (2): 1-25.
 
 
 
