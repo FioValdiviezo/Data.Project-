@@ -21,3 +21,24 @@ Last folder: this folder contains a complementary analysis based on the data pub
 following variables: life expentancy, schooling, and natural resources rents.
 Research questions: Natural rents has a negative effect on people's life expentancy?
 
+
+
+RESULTS:
+
+Table I :  
+
+
+![224B68B2-1714-4DAB-9EF9-2BCBE9ED9D0C-350-000000038C3C786A](https://user-images.githubusercontent.com/82238535/139477051-5df6f109-10a8-4f6d-a985-75483af2a991.JPG)
+
+
+
+
+Table II: 
+
+
+![27C3E508-E0E3-439D-ACF8-E5052FE1DB7B-350-0000000326807C37](https://user-images.githubusercontent.com/82238535/139477073-2746e362-314d-4576-bef5-d02b4d409ddd.JPG)
+
+
+
+
+
